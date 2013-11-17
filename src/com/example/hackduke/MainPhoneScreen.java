@@ -15,6 +15,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -121,8 +122,13 @@ public class MainPhoneScreen extends Activity {
             public void onDataChange (DataSnapshot snapshot) {
                 if (snapshot.getValue() != null) {
                     // Bitmap b = (Bitmap)snapshot.getValue();
+                    try{
                     ImageView v = (ImageView) findViewById(R.id.image_one);
                     v.setImageBitmap(BitmapConverter.StringToBitMap((String) snapshot.getValue()));
+                    }
+                    catch(Exception e){
+                        
+                    }
                     // Log.e("MPS", snapshot.getValue()+"");
                 }
             }
@@ -138,8 +144,13 @@ public class MainPhoneScreen extends Activity {
             @Override
             public void onDataChange (DataSnapshot snapshot) {
                 if (snapshot.getValue() != null) {
+                    try{
                     ImageView v = (ImageView) findViewById(R.id.image_two);
                     v.setImageBitmap(BitmapConverter.StringToBitMap((String) snapshot.getValue()));
+                    }
+                    catch(Exception e){
+                        
+                    }
                 }
             }
 
@@ -154,8 +165,13 @@ public class MainPhoneScreen extends Activity {
             @Override
             public void onDataChange (DataSnapshot snapshot) {
                 if (snapshot.getValue() != null) {
+                    try{
                     ImageView v = (ImageView) findViewById(R.id.image_three);
                     v.setImageBitmap(BitmapConverter.StringToBitMap((String) snapshot.getValue()));
+                    }
+                    catch(Exception e){
+                        
+                    }
                 }
             }
 
@@ -169,12 +185,19 @@ public class MainPhoneScreen extends Activity {
 
             @Override
             public void onDataChange (DataSnapshot snapshot) {
+                try{
+                    
+                
                 if (snapshot.getValue() != null) {
                     ImageView v = (ImageView) findViewById(R.id.image_four);
                     v.setImageBitmap(BitmapConverter.StringToBitMap((String) snapshot.getValue()));
                 }
                 else {
 
+                }
+                }
+                catch(Exception e){
+                    
                 }
                 // Log.e("MainPhoneScreen", map.size()+"s");
             }
@@ -225,6 +248,8 @@ public class MainPhoneScreen extends Activity {
                         switch (image_count) {
                             case 0:
                                 v = (ImageView) findViewById(R.id.image_one);
+                              
+                                
                                 break;
                             case 1:
                                 v = (ImageView) findViewById(R.id.image_two);
@@ -299,6 +324,51 @@ public class MainPhoneScreen extends Activity {
 
     public void add_file_dialog () {
 
+    }
+    
+    public void moveToDraw(View v){
+        ImageView image;
+        Bitmap bitmap = null;
+        String numString = "";
+        switch(v.getId()){
+            case R.id.image_one:
+                 image = (ImageView) findViewById(R.id.image_one);
+                  bitmap = ((BitmapDrawable)image.getDrawable()).getBitmap();
+                  numString ="0";
+                          
+                break;
+            case R.id.image_two:
+                image = (ImageView) findViewById(R.id.image_two);
+                 bitmap = ((BitmapDrawable)image.getDrawable()).getBitmap();
+                 numString ="1";
+                break;
+            case R.id.image_three:
+                image = (ImageView) findViewById(R.id.image_three);
+                 bitmap = ((BitmapDrawable)image.getDrawable()).getBitmap();
+                 numString ="2";
+                break;
+            case R.id.image_four:
+                image = (ImageView) findViewById(R.id.image_four);
+                 bitmap = ((BitmapDrawable)image.getDrawable()).getBitmap();
+                 numString ="3";
+                break;
+        }
+       String bit = BitmapConverter.BitMapToString(bitmap);
+       startPointScreen(bit, numString);
+       
+        
+        
+    }
+    
+    public static final String BITMAP = "bit";
+    public static final String END = "endpoint";
+    public void startPointScreen(String bit, String num){
+        Intent i = new Intent(this, DrawActivity.class);
+        i.putExtra(BITMAP, bit);
+        String urlString = base+"/"+num+"m/movements/";
+        i.putExtra(END, urlString);
+        startActivity(i);
+        
     }
 
 }

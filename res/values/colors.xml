@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name = "gray_blue"> #98B4DA </color>
+    <color name="dark_blue">#012D6A</color>
+    <color name="light_gray">#ECF0F1</color>
+    <color name="light_blue">#527CB4</color>
+    <color name="button_blue_pressed">#FF7788</color>
+    <color name="button_blue_not_pressed">#FF7700</color>
+    <color name = "error_red">#e74c3c</color>
+    <color name = "black_blue">#142D50</color>
+    <color name = "dark_gray">#444D6A</color>
+   
+  
+
+</resources>

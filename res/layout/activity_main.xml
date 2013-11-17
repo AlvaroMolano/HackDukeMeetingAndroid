@@ -11,19 +11,21 @@
 
     <Button
         android:id="@+id/join_button"
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
+        android:layout_width="220dp"
+        android:layout_height="80dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
+        android:background="@drawable/blue_button"
         android:text="Join"/>
 
     <Button
         android:id="@+id/create_button"
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
+        android:layout_width="220dp"
+        android:layout_height="80dp"
         android:layout_above="@+id/join_button"
         android:layout_alignLeft="@+id/join_button"
         android:layout_marginBottom="28dp"
+        android:background="@drawable/blue_button"
         android:text="Create" />
 
     <ImageView

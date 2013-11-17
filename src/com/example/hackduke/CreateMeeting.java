@@ -22,6 +22,7 @@ import android.widget.TextView;
 public class CreateMeeting extends Activity {
 
     Firebase meetingRef = new Firebase("https://hackduke.firebaseio.com/current_value/");
+    
     Long meetingNumber;
     Boolean done = false;
 
@@ -29,6 +30,8 @@ public class CreateMeeting extends Activity {
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_meeting_id);
+        
+        
         //Map<String, Object> meetingMap = new HashMap<String, Object>();
         //meetingRef.updateChildren(meetingMap);
         //Integer integer = (Integer) meetingMap.get("current_number");

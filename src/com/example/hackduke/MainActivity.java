@@ -26,6 +26,7 @@ public class MainActivity extends Activity implements OnClickListener {
     
     Firebase ref2 = new Firebase("https://hackduke.firebaseio.com/7435282457/images");
     Map<String, Object> test = new HashMap<String, Object>();
+    
 
     @Override
     protected void onCreate (Bundle savedInstanceState) {

@@ -52,6 +52,13 @@
             android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
           
         </activity>
+           <activity
+            android:name="com.example.hackduke.DrawActivity"
+            android:label="Meeting"
+            android:screenOrientation="landscape" 
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
+          
+        </activity>
     </application>
 
 </manifest>
