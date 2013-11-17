@@ -4,15 +4,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <Button
-        android:id="@+id/add_question_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/button2"
-        android:layout_alignParentLeft="true"
-        android:layout_marginBottom="22dp"
-        android:text="Add Question" />
-
     <TextView
         android:id="@+id/meeting_id_text_view"
         android:layout_width="wrap_content"
@@ -22,15 +13,6 @@
         android:layout_alignRight="@+id/button1"
         android:ems="10" >
     </TextView>
-
-    <Button
-        android:id="@+id/add_file_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginBottom="77dp"
-        android:text="Add File" />
 
     <LinearLayout
         android:id="@+id/linearLayout1"
@@ -94,5 +76,31 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/editText1"
         android:text="MeetingNumber" />
+
+    <Button
+        android:id="@+id/add_file_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/add_question_button"
+        android:layout_marginBottom="51dp"
+        android:text="Add File" />
+
+    <Button
+        android:id="@+id/add_question_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:text="Add Question" />
+
+    <TextView
+        android:id="@+id/questions_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/linearLayout1"
+        android:layout_alignParentLeft="true"
+        android:text="Questions\n" />
 
 </RelativeLayout>

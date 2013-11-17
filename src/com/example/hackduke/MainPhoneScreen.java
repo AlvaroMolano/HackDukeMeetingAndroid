@@ -11,6 +11,7 @@ import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -21,6 +22,7 @@ import android.view.TextureView;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -192,6 +194,8 @@ public class MainPhoneScreen extends Activity {
                     image_count =
                             ((Long)((HashMap<String, Object>) snapshot.getValue())
                                     .get("image_count")).intValue();
+                    question_array = ((ArrayList<String>)((HashMap<String,Object>)snapshot.getValue())
+                                     .get("question_array"));
                 }
             }
 
@@ -261,23 +265,32 @@ public class MainPhoneScreen extends Activity {
         // Use the Builder class for convenient dialog construction
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
-        /*
-         * builder.setMessage(R.string.dialog_fire_missiles)
-         * .setPositiveButton(R.string.fire, new
-         * DialogInterface.OnClickListener() {
-         * public void onClick(DialogInterface dialog, int id) {
-         * // FIRE ZE MISSILES!
-         * }
-         * })
-         * .setNegativeButton(R.string.cancel, new
-         * DialogInterface.OnClickListener() {
-         * public void onClick(DialogInterface dialog, int id) {
-         * // User cancelled the dialog
-         * }
-         * });
-         */
-        // Create the AlertDialog object and return it
+         builder.setTitle("Enter Question:");
+         
+         //builder.setMessage("Type question here:");
+         final EditText input = new EditText(this);
+         builder.setView(input);
+         builder.setPositiveButton("Enter", new
+         DialogInterface.OnClickListener() {
+         public void onClick(DialogInterface dialog, int id) {
+         // FIRE ZE MISSILES!
+              String question = input.getText().toString();
+              append_question(question);
+         }
+         });
+         builder.setNegativeButton("Cancel", new
+         DialogInterface.OnClickListener() {
+         public void onClick(DialogInterface dialog, int id) {
+         // User cancelled the dialog
+         }
+         });
+         // Create the AlertDialog object and return it
         builder.create().show();
+    }
+    
+    public void append_question(String question){
+        question_array.add(question);
+        meetingRef.child("question_array").setValue(question_array);
     }
 
     public void add_file_dialog () {
