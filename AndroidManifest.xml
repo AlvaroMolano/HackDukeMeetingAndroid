@@ -15,10 +15,13 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+        
         <activity
             android:name="com.example.hackduke.MainActivity"
             android:label="@string/app_name"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait" 
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
+            
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,21 +32,24 @@
          <activity
             android:name="com.example.hackduke.JoinMeeting"
             android:label="Meeting"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait" 
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
           
         </activity>
         
          <activity
             android:name="com.example.hackduke.CreateMeeting"
             android:label="Meeting"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait" 
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
           
         </activity>
         
           <activity
             android:name="com.example.hackduke.MainPhoneScreen"
             android:label="Meeting"
-            android:screenOrientation="landscape" >
+            android:screenOrientation="landscape" 
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
           
         </activity>
     </application>

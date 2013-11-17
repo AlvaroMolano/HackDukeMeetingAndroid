@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="Join" />
+        android:text="Join"/>
 
     <Button
         android:id="@+id/create_button"
@@ -25,5 +25,13 @@
         android:layout_alignLeft="@+id/join_button"
         android:layout_marginBottom="28dp"
         android:text="Create" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/collaboard" />
 
 </RelativeLayout>

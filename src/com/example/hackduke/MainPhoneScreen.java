@@ -289,7 +289,11 @@ public class MainPhoneScreen extends Activity {
     }
     
     public void append_question(String question){
+    	if(question_array == null){
+    		question_array = new ArrayList<String>();
+    	}
         question_array.add(question);
+        
         meetingRef.child("question_array").setValue(question_array);
     }
 

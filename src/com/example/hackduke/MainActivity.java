@@ -32,7 +32,6 @@ public class MainActivity extends Activity implements OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
-        
         Button join = (Button)findViewById(R.id.join_button);
         Button create = (Button)findViewById(R.id.create_button);
         join.setOnClickListener(this);
