@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/add_question_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button2"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="22dp"
+        android:text="Add Question" />
+
+    <TextView
+        android:id="@+id/meeting_id_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/button1"
+        android:ems="10" >
+    </TextView>
+
+    <Button
+        android:id="@+id/add_file_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="77dp"
+        android:text="Add File" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/editText1"
+        android:layout_toRightOf="@+id/button1"
+        android:orientation="vertical" >
+        
+        <LinearLayout     android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:orientation="horizontal" >
+        
+	        <ImageView
+	        android:id="@+id/image_one"
+	        android:layout_width="100dp"
+	        android:layout_height="100dp"
+	        android:layout_alignBottom="@+id/button1"
+	        android:layout_marginRight="43dp"
+	        android:layout_toLeftOf="@+id/linearLayout1"
+	        android:src="@drawable/grumpy_cat" />
+	        <ImageView
+	        android:id="@+id/image_two"
+	        android:layout_width="100dp"
+	        android:layout_height="100dp"
+	        android:layout_alignBottom="@+id/button1"
+	        android:layout_marginRight="43dp"
+	        android:layout_toLeftOf="@+id/linearLayout1"
+	        android:src="@drawable/grumpy_cat" />
+        </LinearLayout>
+        
+          <LinearLayout     android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:orientation="horizontal" >
+        
+	        <ImageView
+	        android:id="@+id/image_three"
+	        android:layout_width="100dp"
+	        android:layout_height="100dp"
+	        android:layout_alignBottom="@+id/button1"
+	        android:layout_marginRight="43dp"
+	        android:layout_toLeftOf="@+id/linearLayout1"
+	        android:src="@drawable/grumpy_cat" />
+	        <ImageView
+	        android:id="@+id/image_four"
+	        android:layout_width="100dp"
+	        android:layout_height="100dp"
+	        android:layout_alignBottom="@+id/button1"
+	        android:layout_marginRight="43dp"
+	        android:layout_toLeftOf="@+id/linearLayout1"
+	        android:src="@drawable/grumpy_cat" />
+        </LinearLayout>
+        
+        
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/editText1"
+        android:text="MeetingNumber" />
+
+</RelativeLayout>
