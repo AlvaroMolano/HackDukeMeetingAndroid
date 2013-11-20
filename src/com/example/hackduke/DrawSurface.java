@@ -55,6 +55,7 @@ public class DrawSurface extends SurfaceView implements SurfaceHolder.Callback, 
         //t.stop();
         //t.alive = false;
         //t = null;
+        t.setActive(false);
         
     }
 
@@ -147,6 +148,10 @@ public class DrawSurface extends SurfaceView implements SurfaceHolder.Callback, 
         boolean enabled = false;
         int x;
         int y;
+        
+        public synchronized void setActive(boolean value){
+            alive = false;
+        }
 
         public DrawThread (Bitmap b, SurfaceHolder h, DrawSurface d) {
             Log.e("Bitmap?", "" + (b != null));
@@ -161,7 +166,7 @@ public class DrawSurface extends SurfaceView implements SurfaceHolder.Callback, 
 
             Log.e("I called ", "run");
             Log.e("I called ", "" + bitmap.getWidth());
-            while (true) {
+            while (alive) {
 
                 Canvas canvas = this.holder.lockCanvas();
                 Rect src = new Rect(0, 0, bitmap.getWidth(), bitmap.getHeight());

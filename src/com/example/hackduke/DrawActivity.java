@@ -32,9 +32,10 @@ public class DrawActivity extends Activity {
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
                drawSurface.kill();
+               this.finish();
             return true;
         }
-        this.finish();
+        //this.finish();
         return super.onKeyDown(keyCode, event);
     }
     
